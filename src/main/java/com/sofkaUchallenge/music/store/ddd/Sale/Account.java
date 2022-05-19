@@ -14,4 +14,12 @@ public class Account extends Entity<AccountId> {
         this.accountEmail = email;
         this.accountUserName = username;
     }
+
+    public Email accountEmail() {
+        return accountEmail;
+    }
+
+    public Username accountUserName() {
+        return accountUserName;
+    }
 }

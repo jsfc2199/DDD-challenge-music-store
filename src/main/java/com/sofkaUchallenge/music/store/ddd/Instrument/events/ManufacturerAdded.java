@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkaUchallenge.music.store.ddd.Instrument.values.Manufacturer;
 
 public class ManufacturerAdded extends DomainEvent {
-    protected Manufacturer manufacturerInstrument;
+    private final Manufacturer manufacturerInstrument;
 
     public ManufacturerAdded(Manufacturer manufacturer) {
         super("sofka.instrument.manufactureradded");
