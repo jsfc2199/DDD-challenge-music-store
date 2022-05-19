@@ -106,8 +106,8 @@ public class Sale extends AggregateEvent<SaleId> {
         return sellers().stream().filter(seller -> seller.identity().equals(sellerId)).findFirst();
     }
 
-    public Optional<Account> getAccountById(AccesoryId accesoryId){
-        return accounts().stream().filter(account -> account.identity().equals(accesoryId)).findFirst();
+    public Optional<Account> getAccountById(AccountId accountId){
+        return accounts().stream().filter(account -> account.identity().equals(accountId)).findFirst();
     }
 
     public SaleInvoice saleInvoice() {

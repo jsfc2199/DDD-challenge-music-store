@@ -22,4 +22,12 @@ public class Account extends Entity<AccountId> {
     public Username accountUserName() {
         return accountUserName;
     }
+
+    public void updateAccountEmail(Email email){
+        this.accountEmail = email;
+    }
+
+    public void updateAccountUserName(Username username){
+        this.accountUserName = username;
+    }
 }
