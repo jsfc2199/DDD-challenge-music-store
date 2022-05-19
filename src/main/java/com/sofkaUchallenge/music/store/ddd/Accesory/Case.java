@@ -36,7 +36,7 @@ public class Case extends Entity<CaseId> {
         this.caseValue = Objects.requireNonNull(value);
     }
 
-    public void changeType(Type type){
+    public void addType(Type type){
         this.caseType = Objects.requireNonNull(type);
     }
 }

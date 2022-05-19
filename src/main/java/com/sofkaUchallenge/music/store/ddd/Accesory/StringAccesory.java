@@ -17,7 +17,7 @@ public class StringAccesory extends Entity<StringAccesoryId> {
         return stringAccesoryValue;
     }
 
-    public void updateValue(Value value){
+    public void updateStringAccesoryValue(Value value){
         this.stringAccesoryValue = Objects.requireNonNull(value);
     }
 }

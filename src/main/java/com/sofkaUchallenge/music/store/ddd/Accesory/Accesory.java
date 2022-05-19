@@ -7,6 +7,7 @@ import com.sofkaUchallenge.music.store.ddd.Accesory.values.*;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 public class Accesory extends AggregateEvent<AccesoryId> {
@@ -86,5 +87,34 @@ public class Accesory extends AggregateEvent<AccesoryId> {
         Objects.requireNonNull(standId);
         Objects.requireNonNull(value);
         appendChange(new StandValueUpdated(standId,value)).apply();
+    }
+
+    public Optional<Case> getCaseById(CaseId caseId){
+        return cases().stream().filter(caseElement -> caseElement.identity().equals(caseId)).findFirst();
+    }
+
+    public Optional<Stand> getStandById(StandId standId){
+        return stands().stream().filter(stand -> stand.identity().equals(standId)).findFirst();
+    }
+
+    public Optional<StringAccesory> getStringAccesoryById(StringAccesoryId stringAccesoryId){
+        return stringAccesories().stream().filter(stringAccesory -> stringAccesory.identity().equals(stringAccesoryId)).findFirst();
+    }
+
+    //--------------
+    public Manufacturer manufacturer() {
+        return manufacturer;
+    }
+
+    public Set<Case> cases() {
+        return cases;
+    }
+
+    public Set<Stand> stands() {
+        return stands;
+    }
+
+    public Set<StringAccesory> stringAccesories() {
+        return stringAccesories;
     }
 }
