@@ -4,13 +4,13 @@ import co.com.sofka.domain.generic.Command;
 import com.sofkaUchallenge.music.store.ddd.Instrument.values.InstrumentId;
 import com.sofkaUchallenge.music.store.ddd.Instrument.values.Manufacturer;
 
-public class CreateInstrument extends Command {
+public class AddManufacturer extends Command {
     private final InstrumentId instrumentId;
     private final Manufacturer manufacturerInstrument;
 
-    public CreateInstrument(InstrumentId instrumentId, Manufacturer manufacturer) {
+    public AddManufacturer(InstrumentId instrumentId, Manufacturer manufacturerInstrument) {
         this.instrumentId = instrumentId;
-        this.manufacturerInstrument = manufacturer;
+        this.manufacturerInstrument = manufacturerInstrument;
     }
 
     public InstrumentId getInstrumentId() {
