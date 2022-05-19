@@ -1,7 +1,6 @@
 package com.sofkaUchallenge.music.store.ddd.Instrument.commands;
 
 import co.com.sofka.domain.generic.Command;
-import com.sofkaUchallenge.music.store.ddd.Instrument.values.Brand;
 import com.sofkaUchallenge.music.store.ddd.Instrument.values.FluteId;
 import com.sofkaUchallenge.music.store.ddd.Instrument.values.InstrumentId;
 import com.sofkaUchallenge.music.store.ddd.Instrument.values.Value;
