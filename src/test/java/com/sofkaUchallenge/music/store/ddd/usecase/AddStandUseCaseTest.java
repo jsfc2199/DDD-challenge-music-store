@@ -62,7 +62,7 @@ class AddStandUseCaseTest {
         var passedEvent = new AccesoryCreated(
                 manufacturer
         );
-        passedEvent.setAggregateRootId("xxxx");
+
         return List.of(passedEvent);
     }
 

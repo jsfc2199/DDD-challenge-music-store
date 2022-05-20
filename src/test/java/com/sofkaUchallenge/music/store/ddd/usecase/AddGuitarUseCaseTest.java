@@ -69,7 +69,7 @@ class AddGuitarUseCaseTest {
         var passedEvent = new InstrumentCreated(
                 manufacturer
         );
-        passedEvent.setAggregateRootId("xxxx");
+
         return List.of(passedEvent);
     }
 }

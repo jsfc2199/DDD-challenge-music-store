@@ -59,7 +59,6 @@ class AddAccountUseCaseTest {
     private List<DomainEvent> history(){
         var invoice = new SaleInvoice(135000);
         var passedEvent = new SaleCreated(invoice);
-        passedEvent.setAggregateRootId("xxxx");
         return List.of(passedEvent);
     }
 }
