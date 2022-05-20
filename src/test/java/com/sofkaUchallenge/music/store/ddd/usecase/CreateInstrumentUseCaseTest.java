@@ -26,7 +26,7 @@ class CreateInstrumentUseCaseTest {
         List<DomainEvent> events = UseCaseHandler
                 .getInstance()
                 .syncExecutor(useCase, new RequestCommand<>(command))
-                .orElseThrow()
+                .orElseThrow(()->new IllegalArgumentException("Something went wrong while creating the instrument"))
                 .getDomainEvents();
 
         InstrumentCreated event = (InstrumentCreated) events.get(0);

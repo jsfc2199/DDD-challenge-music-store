@@ -48,7 +48,7 @@ class UpdateAccountEmailUseCaseTest {
                 .getInstance()
                 .setIdentifyExecutor("ddd")
                 .syncExecutor(useCase, new RequestCommand<>(command))
-                .orElseThrow()
+                .orElseThrow(()->new IllegalArgumentException("Something went wrong while updating the email"))
                 .getDomainEvents();
 
         //assert

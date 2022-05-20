@@ -110,6 +110,13 @@ public class Sale extends AggregateEvent<SaleId> {
         return accounts().stream().filter(account -> account.identity().equals(accountId)).findFirst();
     }
 
+    public void sendEmailToClient(String email){
+        Objects.requireNonNull(email);
+        appendChange(new EmailSent(email)).apply();
+    }
+
+
+
     public SaleInvoice saleInvoice() {
         return saleInvoice;
     }

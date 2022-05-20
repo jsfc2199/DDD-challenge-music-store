@@ -54,7 +54,7 @@ class UpdateGuitarBrandUseCaseTest {
                 .getInstance()
                 .setIdentifyExecutor("ddd")
                 .syncExecutor(useCase, new RequestCommand<>(command))
-                .orElseThrow()
+                .orElseThrow(()->new IllegalArgumentException("Something went wrong while updating the guitar brand"))
                 .getDomainEvents();
 
         //assert

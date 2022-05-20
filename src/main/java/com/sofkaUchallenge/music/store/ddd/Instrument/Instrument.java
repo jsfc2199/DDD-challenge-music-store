@@ -136,6 +136,11 @@ public class Instrument extends AggregateEvent<InstrumentId> {
         return flutes().stream().filter(flute -> flute.identity().equals(fluteId)).findFirst();
     }
 
+    public void notifyToWarehouse(String notification){
+        Objects.requireNonNull(notification);
+        appendChange(new WarehouseNotified(notification)).apply();
+    }
+
     //----------------
     public Manufacturer manufacturer() {
         return manufacturer;

@@ -53,7 +53,7 @@ class ChangeCaseTypeUseCaseTest {
                 .getInstance()
                 .setIdentifyExecutor("ddd")
                 .syncExecutor(useCase, new RequestCommand<>(command))
-                .orElseThrow()
+                .orElseThrow(()->new IllegalArgumentException("Something went wrong while changing the case type"))
                 .getDomainEvents();
 
         //assert

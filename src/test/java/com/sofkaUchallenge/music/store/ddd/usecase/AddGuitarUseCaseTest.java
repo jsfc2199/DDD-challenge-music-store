@@ -51,7 +51,7 @@ class AddGuitarUseCaseTest {
                 .getInstance()
                 .setIdentifyExecutor(command.getInstrumentId().value())
                 .syncExecutor(useCase, new RequestCommand<>(command))
-                .orElseThrow()
+                .orElseThrow(()->new IllegalArgumentException("Something went wrong while adding the guitar"))
                 .getDomainEvents();
 
         //assert

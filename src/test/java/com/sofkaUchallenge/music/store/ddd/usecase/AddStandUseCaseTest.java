@@ -47,7 +47,7 @@ class AddStandUseCaseTest {
                 .getInstance()
                 .setIdentifyExecutor(command.getAccesoryId().value())
                 .syncExecutor(useCase, new RequestCommand<>(command))
-                .orElseThrow()
+                .orElseThrow(()->new IllegalArgumentException("Something went wrong while adding the stand"))
                 .getDomainEvents();
 
         //assert

@@ -26,7 +26,7 @@ class CreateAccesoryUseCaseTest {
 
         List<DomainEvent> events = UseCaseHandler
                 .getInstance().syncExecutor(useCase, new RequestCommand<>(command))
-                .orElseThrow()
+                .orElseThrow(()->new IllegalArgumentException("Something went wrong while creating the accesory"))
                 .getDomainEvents();
 
         AccesoryCreated event = (AccesoryCreated) events.get(0);
