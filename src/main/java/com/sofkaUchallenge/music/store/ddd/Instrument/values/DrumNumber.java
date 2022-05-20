@@ -9,6 +9,9 @@ public class DrumNumber implements ValueObject<Integer> {
 
     public DrumNumber(Integer value) {
         this.value = Objects.requireNonNull(value);
+        if(this.value<0){
+            throw new IllegalArgumentException("The number of drums can't be negative");
+        }
     }
 
     @Override

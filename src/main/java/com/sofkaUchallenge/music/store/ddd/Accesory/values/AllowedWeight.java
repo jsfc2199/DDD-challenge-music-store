@@ -9,6 +9,9 @@ public class AllowedWeight implements ValueObject<Integer> {
 
     public AllowedWeight(Integer value) {
         this.value = Objects.requireNonNull(value);
+        if(this.value<0){
+            throw new IllegalArgumentException("The weight can't be negative");
+        }
     }
 
     @Override

@@ -9,6 +9,9 @@ public class CymbalNumber implements ValueObject<Integer> {
 
     public CymbalNumber(Integer value) {
         this.value = Objects.requireNonNull(value);
+        if(this.value<0){
+            throw new IllegalArgumentException("The number of cymbals can't be negative");
+        }
     }
 
     @Override

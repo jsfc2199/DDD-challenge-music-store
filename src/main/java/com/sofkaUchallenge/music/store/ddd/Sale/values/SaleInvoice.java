@@ -8,7 +8,7 @@ public class SaleInvoice implements ValueObject<Integer> {
     private final Integer value;
 
     public SaleInvoice(Integer value) {
-        this.value = value;
+        this.value = Objects.requireNonNull(value);
         if(this.value<0){
             throw new IllegalArgumentException("The invoice can't be negative");
         }

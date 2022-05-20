@@ -9,6 +9,9 @@ public class Value implements ValueObject<Integer> {
 
     public Value(Integer value) {
         this.value = Objects.requireNonNull(value);
+        if(this.value<0){
+            throw new IllegalArgumentException("The value can't be negative");
+        }
     }
     @Override
     public Integer value() {
