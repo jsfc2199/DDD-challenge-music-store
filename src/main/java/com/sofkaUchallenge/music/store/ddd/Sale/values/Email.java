@@ -13,7 +13,7 @@ public class Email implements ValueObject<String> {
             throw new IllegalArgumentException("The email can't be blank");
         }
 
-        if(!value.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-Z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
+        if(!value.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
             throw new IllegalArgumentException("The email is not valid");
         }
     }
