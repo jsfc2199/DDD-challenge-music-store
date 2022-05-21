@@ -30,7 +30,7 @@ class UpdateAccountEmailFailureUseCaseTest {
     void updateEmailInAccount(){
         var message = Assertions.assertThrows(IllegalArgumentException.class, ()->{
             var command = new UpdateAccountEmail(SaleId.of("ddd"), AccountId.of("25eff46gf"), new Email("jsfc2199fgjcom"));
-            var useCase = new UpdateAccountEmailFailureUseCase();
+            var useCase = new UpdateAccountEmailUseCase();
 
             when(repository.getEventsBy("ddd")).thenReturn(List.of(
                     new SaleCreated(new SaleInvoice(900000)),
